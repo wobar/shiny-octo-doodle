@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Advanced topics HTML5</title>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            
+        <script language="javascript">
+            
+            function updateColor(color) {
+                document.bgColor = color;
+            }
+    
+        </script>
+    </head>
+    <body id="bodyID">
+        <h2>Some more advanced topics of html5</h2>
+
+        <label for="colorselector">What is your favourite color? Please select</label>
+        <input type="color" id="colorSelectorID" name="colorselector" onchange="updateColor(colorSelectorID.value)"/>
+
+<br/>
+<hr/>
+<br/>
+    
+        <div align="center">
+            <video id="movie" width="320" height="240" controls>
+                <source src="http://www.pocketmovies.net/movies/download/dl/70aafbc9b33e3414da3baa37852d99fd/580f5ee2/1503/3d/big-buck-bunny_292_480x268.mp4"
+                    type="video/mp4">
+                Seems that your browser is not compatible with HTML5 / video
+            </video>
+            <br/>
+            Control panel
+            <br/>
+            <button onclick="document.getElementById('movie').play()">Play</button>
+            <button onclick="document.getElementById('movie').pause()">Pause</button>
+            
+        </div>
+        <footer>
+            Video linked from <br/>
+           <em> http://www.pocketmovies.net </em>
+        </footer>
+    </body>
+</html>
