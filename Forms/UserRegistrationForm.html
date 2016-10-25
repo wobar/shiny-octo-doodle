@@ -25,7 +25,7 @@
                             <label for="firstName">First name</label>
                         </td>
                         <td>
-                            <input type="text" name="firstName" required minlength="2" maxlength="30">
+                            <input autofocus tabindex="1" type="text" name="firstName" required minlength="2" maxlength="30">
                         </td>
                     </tr>
                     <tr>
@@ -33,7 +33,7 @@
                             <label for="surname">Surname</label>
                         </td>
                         <td>
-                            <input type="text" name="surname" required minlength="2" maxlength="30">
+                            <input tabindex="2" type="text" name="surname" required minlength="2" maxlength="30">
                         </td>
                     </tr>
                     <tr>
@@ -41,7 +41,7 @@
                             <label for="country">Nationality</label>
                         </td>
                         <td>
-                            <select>
+                            <select tabindex="3">
                                 <option selected value="Poland">Poland</option>
                                 <option value="England">England</option>
                                 <option value="US">US</option>
@@ -65,7 +65,7 @@
                             <label for="phoneNumber">Phone number</label>
                         </td>
                         <td>
-                            <input type="tel" name="phoneNumber" placeholder="your mobile">
+                            <input tabindex="4" type="tel" name="phoneNumber" placeholder="your mobile">
                         </td>
                     </tr>
                     <tr>
@@ -73,7 +73,7 @@
                             <label for="email">E-mail</label>
                         </td>
                         <td>
-                            <input type="email" name="email" placeholder="example@example.com">
+                            <input tabindex="5" type="email" name="email" placeholder="example@example.com">
                         </td>
                     </tr>
                     <tr>
@@ -81,8 +81,8 @@
                             Choose gender
                         </td>
                         <td>
-                            <input type="radio" name="sex" value="Male"> Male 
-                            <input type="radio" name="sex" value="Female"> Female
+                            <input tabindex="6" type="radio" name="sex" value="Male"> Male 
+                            <input tabindex="7" type="radio" name="sex" value="Female"> Female
                         </td>
                     </tr>
                 </table>
@@ -100,7 +100,7 @@
                             <label for="login">Login</label>
                         </td>
                         <td>
-                            <input type="text" name="login" required minlength="2" maxlength="15" placeholder="Unique login">
+                            <input tabindex="8" type="text" name="login" required minlength="2" maxlength="15" placeholder="Unique login">
                         </td>
                     </tr>
                     <tr>
@@ -108,7 +108,7 @@
                             <label for="password">Password</label>
                         </td>
                         <td>
-                            <input type="password" name="password" required minlength="5" maxlength="20">
+                            <input tabindex="9" type="password" name="password" required minlength="5" maxlength="20">
                         </td>
                     </tr>
                 </table>
@@ -126,8 +126,8 @@
                             <label for="address">Address</label>
                         </td>
                         <td>
-                            <textarea name="address" rows=10 cols=100 required placeholder="Enter your primary address here"></textarea><br/>
-                            <input type="checkbox" name="contactTheSame">Mark if contact address is the same as main
+                            <textarea tabindex="10" name="address" rows=10 cols=100 required placeholder="Enter your primary address here"></textarea><br/>
+                            <input tabindex="11" type="checkbox" name="contactTheSame">Mark if contact address is the same as main
                             <br/>
                         </td>
                     </tr>
@@ -136,7 +136,7 @@
                             <label for="contactAddress">Contact Address</label>
                         </td>
                         <td>
-                            <textarea name="contactAddress" rows=10 cols=100 placeholder="Enter your contact address here"></textarea>
+                            <textarea tabindex="12" name="contactAddress" rows=10 cols=100 placeholder="Enter your contact address here"></textarea>
                         </td>
                     </tr>
 
@@ -145,7 +145,7 @@
             </fieldset>
             
             <div align="center">
-                <button style="margin:20px" type="submit">Send</button> <button type="reset">Reset</button>            
+                <button tabindex="13" style="margin:20px" type="submit">Send</button> <button tabindex="14" type="reset">Reset</button>            
             </div>
 
         </form>
