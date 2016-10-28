@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Display none testing</title>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            
+        <script>
+            
+            var supportCheckVideoInfo = function() { 
+                if (!!document.createElement('video').canPlayType) {
+
+                    document.getElementById('videoMessage').innerHtml = 'Your browser support video';
+                }
+                else {
+                    document.getElementById('videoMessage').innerHtml = 'Your browser does not support video';
+                }
+            }
+
+
+            var toggle = function() {
+                if (document.getElementById('testId').style.display == "none") {
+                    document.getElementById('testId').style.display="initial";
+                } else {
+                    document.getElementById('testId').style.display="none";
+                }
+            }
+        </script>
+
+<style>
+
+
+   span + input {
+        width:300px;
+    }
+   
+   
+
+</style>
+
+    </head>
+    <body>
+        <span />
+    
+        <label id="testId" >blee</label>
+        <input type="text" />
+
+        <button onclick="toggle()" >Toggle</button>
+
+        <footer>
+            <p>
+                As we can see, when display = none is applied, element does not affect layout any more but is still present in DOM model and is taken under consideration when calculating CSS styles
+            </p>
+        </footer>
+    </body>
+</html>
