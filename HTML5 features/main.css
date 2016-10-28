@@ -1,0 +1,21 @@
+h1,h2,h3 {
+    text-align: center;
+}
+
+nav ol {
+    list-style-type: none;    
+}
+
+nav ol li {
+    display: inline;   
+    margin-left: 20px;
+}
+
+#presentationContainer {
+    display: block;
+
+    border: darkblue;
+    border-radius: 2;
+    border-style: dotted;
+    border-width: 5;
+}
