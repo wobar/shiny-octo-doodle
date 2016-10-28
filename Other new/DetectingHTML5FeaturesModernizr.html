@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Detecting HTML5 features in browser</title>    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <script src="modernizr-custom.js"></script>         
+
+        <script> 
+
+            var supportCheckVideoInfo = function() { 
+                if (Modernizr.video) {
+
+                    document.getElementById('videoMessage').textContent = 'available';
+                }
+                else {
+                    document.getElementById('videoMessage').textContent = 'not available';
+                }
+            }
+
+            var supportCheckAudioInfo = function() { 
+                if (Modernizr.audio) {
+
+                    document.getElementById('audioMessage').textContent = 'available';
+                }
+                else {
+                    document.getElementById('audioMessage').textContent = 'not available';
+                }
+            }
+
+            var supportCheckCanvasInfo = function() { 
+                if (Modernizr.canvas) {
+
+                    document.getElementById('canvasMessage').textContent = 'available';
+                }
+                else {
+                    document.getElementById('canvasMessage').textContent = 'not available';
+                }
+            }        
+
+            var supportCheckGeolocationInfo = function() { 
+                if (Modernizr.geolocation) {
+
+                    document.getElementById('geolocationMessage').textContent = 'available';
+                }
+                else {
+                    document.getElementById('geolocationMessage').textContent = 'not available';
+                }
+            }
+
+            var supportCheckHistoryInfo = function() { 
+                if (Modernizr.history) {
+
+                    document.getElementById('historyMessage').textContent = 'available';
+                }
+                else {
+                    document.getElementById('historyMessage').textContent = 'not available';
+                }
+            }
+
+            var supportCheckLocalstorageInfo = function() {
+               
+                if (Modernizr.localstorage)
+                {
+                    document.getElementById('localStorageMessage').textContent = 'available';
+                }
+                else
+                {
+                    document.getElementById('localStorageMessage').textContent = 'not available';
+                }                
+            }
+
+            var supportCheckMicrodataInfo = function() { 
+                if (Modernizr.microdata) {
+
+                    document.getElementById('microdataMessage').textContent = 'available';
+                }
+                else {
+                    document.getElementById('microdataMessage').textContent = 'not available';
+                }
+            }
+
+            var supportCheckWebworkersInfo = function() { 
+                if (Modernizr.webworkers) {
+
+                    document.getElementById('webWorkersMessage').textContent = 'available';
+                }
+                else {
+                    document.getElementById('webWorkersMessage').textContent = 'not available';
+                }
+            }
+        </script>
+
+    </head>
+    <body>     
+        <header>
+            List of the HTML5 features 
+        </header>         
+
+        <table style="margin-top:20px">
+            <tr>
+                <td>
+                    Video:
+                </td>
+                <td>
+                    <span id="videoMessage" ></span>        
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Audio:
+                </td>
+                <td>
+                    <span id="audioMessage" ></span>        
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Canvas:
+                </td>
+                <td>
+                    <span id="canvasMessage" ></span>        
+                </td>
+            </tr>           
+                <td>
+                    Geolocation:
+                </td>
+                <td>
+                    <span id="geolocationMessage" ></span>        
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    History:
+                </td>
+                <td>
+                    <span id="historyMessage" ></span>        
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Local storage:
+                </td>
+                <td>
+                    <span id="localStorageMessage" ></span>        
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Microdata:
+                </td>
+                <td>
+                    <span id="microdataMessage" ></span>        
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Web workers:
+                </td>
+                <td>
+                    <span id="webWorkersMessage" ></span>        
+                </td>
+            </tr>
+
+        </table>
+
+        <script>
+            supportCheckAudioInfo();
+            supportCheckCanvasInfo();      
+            supportCheckGeolocationInfo();
+            supportCheckHistoryInfo();
+            supportCheckLocalstorageInfo();
+            supportCheckMicrodataInfo();
+            supportCheckVideoInfo();
+            supportCheckWebworkersInfo();
+        </script>
+
+    </body>
+</html>
