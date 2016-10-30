@@ -18,4 +18,13 @@ nav ol li {
     border-radius: 2;
     border-style: dotted;
     border-width: 5;
+
+    width:800px;
+    height:600px;
 }
+
+#pageContainer {
+    height:600px;
+    width:800px;
+}
+

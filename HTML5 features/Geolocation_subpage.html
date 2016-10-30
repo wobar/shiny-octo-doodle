@@ -1,3 +1,29 @@
-<p>
-    geo
-</p>
+<!DOCTYPE html>
+<html>
+    <head>
+    
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            
+            <script src="modernizr-custom.js"></script>
+            <script src="custom_scripts.js"></script>
+
+            <link rel="stylesheet" type="text/css" href="normalize.css">
+            <link rel="stylesheet" type="text/css" href="main.css">
+
+    </head>
+
+<body>
+
+    <span id="geolocationPage" title="Geolocation example">
+    <p>
+        Your current location on map:
+        <label id="locationCoordinates">not set </label>
+    </p>
+
+    <span id="map_placeholder">
+    </span>
+
+    <br/><br/>
+    <button onclick="getCurrentLocation()">Press to refresh position</button>
+    </span>
+</body>
