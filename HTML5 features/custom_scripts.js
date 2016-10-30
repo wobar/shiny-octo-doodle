@@ -11,7 +11,14 @@ function loadGeolocation() {
 }
 
 function loadDragAndDrop() {
-    document.getElementById('presentationContainer').innerHTML="'<object id='pageContainer' type='text/html' data='DragAndDrop_subpage.html' ></object>";
+    if (Modernizr.localstorage)
+    {
+        document.getElementById('presentationContainer').innerHTML="'<object id='pageContainer' type='text/html' data='DragAndDrop_subpage.html' ></object>";
+    }
+    else
+    {
+        document.getElementById('presentationContainer').innerHTML="<h3 align='center'>Local storage not supported ! (drag and drop example is using localstorage for storing data)</h3>";   
+    }
 }
 
 function loadVideo() {
@@ -26,6 +33,37 @@ function loadVideo() {
 }
 
 
+//drag and drop
+function dragging(event) {
+    event.dataTransfer.setData("objID", event.target.id);
+}
+
+function allowDropItem(event) {
+    event.preventDefault();
+}
+
+function dropItem(event) {
+    event.preventDefault();
+    var draggedId = event.dataTransfer.getData("objID");
+
+    if (draggedId ==="labelForDrag")
+    {
+        //get counter
+        var storedCounter = localStorage.getItem("counterValue");
+        if (storedCounter === null)
+        {
+            storedCounter = 0;
+        }        
+
+        localStorage.setItem("counterValue", ++storedCounter);
+
+        document.getElementById("counter").textContent = "Drop Count: " + storedCounter;        
+    }
+}
+
+function clearDropCounter() {
+    localStorage.removeItem("counterValue");
+}
 
 //geolocation
 function processPosition(location) {
@@ -42,7 +80,7 @@ function processPosition(location) {
 }
 
 function errorInfo(error) {
-    
+
     switch(error.code) 
         {        
         case error.POSITION_UNAVAILABLE:

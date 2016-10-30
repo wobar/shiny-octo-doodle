@@ -1,3 +1,31 @@
-<p>
-    d and d
-</p>
+<!DOCTYPE html>
+<html>
+    <head>
+    
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            
+            <script src="modernizr-custom.js"></script>
+            <script src="custom_scripts.js"></script>
+
+            <link rel="stylesheet" type="text/css" href="normalize.css">
+            <link rel="stylesheet" type="text/css" href="main.css">
+
+    </head>
+
+<body>
+
+    <span id="dragdropPage" title="Drag and Drop example">
+        <label id="labelForDrag" draggable="true" ondragstart="dragging(event)">Drag me to the box</label>
+        <br/>
+        <br/>
+        <div id="dropContainer" ondrop="dropItem(event)" ondragover="allowDropItem(event)" style="width:300px;height:50px;border:2px solid"></div>
+        <br/>
+        <br/>
+        <br/>
+        <label id="counter">Drop Count: </label>
+        <br/>
+        <br/>
+        <button onclick="clearDropCounter()">Clear Counter in local storage</button>
+        
+    </span>
+</body>
