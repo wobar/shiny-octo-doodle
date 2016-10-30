@@ -1,13 +1,29 @@
 
 function loadGeolocation() {
-    document.getElementById('presentationContainer').innerHTML="'<object id='pageContainer' type='text/html' data='Geolocation_subpage.html'></object>";
+    if (Modernizr.geolocation)
+    {
+        document.getElementById('presentationContainer').innerHTML="'<object id='pageContainer' type='text/html' data='Geolocation_subpage.html'></object>";
+    }
+    else
+    {
+        document.getElementById('presentationContainer').innerHTML="<h3 align='center'>Geolocation not supported !</h3>";
+    }
 }
 
 function loadDragAndDrop() {
-    document.getElementById('presentationContainer').innerHTML="'<object type='text/html' data='DragAndDrop_subpage.html' ></object>";
+    document.getElementById('presentationContainer').innerHTML="'<object id='pageContainer' type='text/html' data='DragAndDrop_subpage.html' ></object>";
 }
 
-
+function loadVideo() {
+    if (Modernizr.video)
+    {
+        document.getElementById('presentationContainer').innerHTML="'<object id='pageContainer' type='text/html' data='Video_subpage.html' ></object>";
+    }
+    else
+    {
+        document.getElementById('presentationContainer').innerHTML="<h3 align='center'>Video not supported !</h3>";
+    }
+}
 
 
 
@@ -26,21 +42,25 @@ function processPosition(location) {
 }
 
 function errorInfo(error) {
-    //display error message
-
-
+    
+    switch(error.code) 
+        {        
+        case error.POSITION_UNAVAILABLE:
+          document.getElementById("locationCoordinates").textContent = "Location info not available."
+          break;
+        case error.TIMEOUT:
+          document.getElementById("locationCoordinates").textContent = "Request timed out."
+          break;
+        case error.PERMISSION_DENIED:
+          document.getElementById("locationCoordinates").textContent = "Geolocation blocked by user."
+          break;
+        case error.UNKNOWN_ERROR:
+          document.getElementById("locationCoordinates").textContent = "An error occured."
+          break;
+        }
 }
 
-function getCurrentLocation() {
-    if (Modernizr.geolocation)
-    {
-        var geolocation = navigator.geolocation;
-        geolocation.getCurrentPosition(processPosition, errorInfo);
-    }
-    else
-    {
-        //no support for geolocation
-
-
-    }
+function getCurrentLocation() {    
+    var geolocation = navigator.geolocation;
+    geolocation.getCurrentPosition(processPosition, errorInfo);   
 }
